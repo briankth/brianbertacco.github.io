@@ -1,1 +1,273 @@
-Brian Bertacco | Aerospace Engineering Portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Bertacco | Aerospace Engineering Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f7f6f2;
+            --text-color: #1a1a1a;
+            --accent-color: #c94c22;
+            --light-gray: #e5e4df;
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        nav .logo { font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { text-decoration: none; color: var(--text-color); font-size: 0.9rem; }
+        nav a:hover { color: var(--accent-color); }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            padding: 60px 40px;
+            gap: 40px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .hero-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .subtitle { color: var(--accent-color); font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
+        .hero h1 { font-family: var(--font-serif); font-size: 4rem; font-weight: 400; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--accent-color); }
+        .hero p { font-size: 1.1rem; margin-bottom: 40px; max-width: 90%; }
+        
+        .buttons { display: flex; gap: 15px; }
+        .btn { padding: 12px 24px; text-decoration: none; font-size: 0.9rem; border-radius: 2px; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background-color: var(--accent-color); color: white; border: 1px solid var(--accent-color); transition: 0.2s; }
+        .btn-primary:hover { background-color: #a83d1a; }
+        .btn-secondary { background-color: transparent; color: var(--text-color); border: 1px solid #ccc; transition: 0.2s; }
+        .btn-secondary:hover { border-color: var(--text-color); }
+
+        .hero-image { flex: 1; background-color: #ddd; min-height: 400px; position: relative; overflow: hidden; }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-caption { position: absolute; bottom: 15px; right: 15px; color: white; font-size: 0.75rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+
+        /* Projects Section */
+        .projects { padding: 60px 40px; }
+        .projects-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px; }
+        .projects h2 { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400; }
+        .view-all { font-size: 0.85rem; text-decoration: none; color: var(--text-color); display: flex; align-items: center; gap: 10px; }
+        .view-all::before { content: ""; display: inline-block; width: 30px; height: 1px; background-color: var(--accent-color); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card img { width: 100%; height: 250px; object-fit: cover; background-color: #ccc; margin-bottom: 15px; transition: 0.3s opacity; }
+        .card img:hover { opacity: 0.9; }
+        .card-meta { color: var(--accent-color); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .card h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;}
+        .card p { font-size: 0.9rem; color: #555; margin-bottom: 15px; }
+        .card a { text-decoration: none; color: inherit; display: block; }
+        .card a:hover h3 { color: var(--accent-color); }
+        
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag { background-color: #e8e7e2; padding: 4px 10px; font-size: 0.75rem; border-radius: 2px; }
+
+        /* Footer */
+        footer { padding: 40px; display: flex; justify-content: space-between; border-top: 1px solid var(--light-gray); font-size: 0.85rem; color: #666; }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { color: #666; text-decoration: none; }
+        .footer-links a:hover { color: var(--accent-color); }
+        
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; }
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Brian Bertacco</div>
+        <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="Brian_Bertacco_CV.pdf" target="_blank">CV</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="subtitle">Aerospace Engineering Portfolio</div>
+            <h1>From physical phenomena to engineered solutions<span>.</span></h1>
+            <p>MSc Aerospace Engineering graduate, KTH Royal Institute of Technology. Experimental research, propulsion and simulation.</p>
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">Explore projects &rarr;</a>
+                <a href="Brian_Bertacco_CV.pdf" target="_blank" class="btn btn-secondary">Download CV &darr;</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/800x500/333333/ffffff?text=Add+Hero+Image+Here" alt="Shockwave Shadowgraph">
+            <div class="hero-caption">Experimental fluid mechanics</div>
+        </div>
+    </header>
+
+    <section id="projects" class="projects">
+        <div class="projects-header">
+            <h2>Selected projects</h2>
+            <a href="#" class="view-all">View all projects &rarr;</a>
+        </div>
+        
+        <div class="grid">
+            <!-- Project 1 -->
+            <div class="card">
+                <a href="MSc_Thesis_Shock_Wave_Transmission.pdf" target="_blank">
+                    <img src="https://via.placeholder.com/400x250/555555/ffffff?text=Shadowgraphy" alt="Thesis">
+                    <div class="card-meta">01 / Experimental Research</div>
+                    <h3>Shock-wave transmission <span>&rarr;</span></h3>
+                    <p>MSc thesis &middot; KTH</p>
+                    <div class="tags">
+                        <span class="tag">Diagnostics</span>
+                        <span class="tag">MATLAB / Python</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="card">
+                <a href="Airbus_Sloshing_Rocket_Report.pdf" target="_blank">
+                    <img src="https://via.placeholder.com/400x250/444444/ffffff?text=Sloshing+Dynamics" alt="Airbus Sloshing">
+                    <div class="card-meta">02 / Fluid Dynamics</div>
+                    <h3>Airbus Sloshing Rocket <span>&rarr;</span></h3>
+                    <p>Transient VOF simulations and baffle design</p>
+                    <div class="tags">
+                        <span class="tag">ANSYS Fluent</span>
+                        <span class="tag">Systems Engineering</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="card">
+                <a href="Mars_Starship_Vehicle_Design.pdf" target="_blank">
+                    <img src="https://via.placeholder.com/400x250/333333/ffffff?text=Starship+Interior" alt="Starship">
+                    <div class="card-meta">03 / Space Architecture</div>
+                    <h3>Mars Starship Design <span>&rarr;</span></h3>
+                    <p>Human-rated payload reconfiguration</p>
+                    <div class="tags">
+                        <span class="tag">Life Support</span>
+                        <span class="tag">CAD / Fusion 360</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="card">
+                <a href="CFD_Analysis_Liquid_Metal_Heat_Transfer.pdf" target="_blank">
+                    <img src="https://via.placeholder.com/400x250/666666/ffffff?text=CFD+Mesh" alt="Applied CFD">
+                    <div class="card-meta">04 / Computational Fluid Dynamics</div>
+                    <h3>Liquid Metal Heat Transfer <span>&rarr;</span></h3>
+                    <p>LBE Conjugate heat transfer analysis</p>
+                    <div class="tags">
+                        <span class="tag">ANSYS Fluent</span>
+                        <span class="tag">UDF Implementation</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="card">
+                <a href="eAircraft_Design_Report.pdf" target="_blank">
+                    <img src="https://via.placeholder.com/400x250/777777/ffffff?text=Aircraft+CAD" alt="eAircraft">
+                    <div class="card-meta">05 / Aircraft Design</div>
+                    <h3>2-Seater eAircraft <span>&rarr;</span></h3>
+                    <p>Preliminary sizing and aerodynamic analysis</p>
+                    <div class="tags">
+                        <span class="tag">OpenVSP</span>
+                        <span class="tag">Performance Analysis</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="card">
+                <a href="Satellite_Thermal_Control_System.pdf" target="_blank">
+                    <img src="https://via.placeholder.com/400x250/222222/ffffff?text=Thermal+Model" alt="Satellite Thermal">
+                    <div class="card-meta">06 / Space Systems</div>
+                    <h3>Satellite Thermal Control <span>&rarr;</span></h3>
+                    <p>Preliminary sizing and Thermica optimization</p>
+                    <div class="tags">
+                        <span class="tag">Systema / Thermica</span>
+                        <span class="tag">Orbital Simulation</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="card">
+                <a href="Lunar_Mission_Propulsion.pdf" target="_blank">
+                    <img src="https://via.placeholder.com/400x250/444444/ffffff?text=Propulsion" alt="Lunar Mission">
+                    <div class="card-meta">07 / Propulsion</div>
+                    <h3>Lunar Mission Sizing <span>&rarr;</span></h3>
+                    <p>Electric propulsion and power generator evaluation</p>
+                    <div class="tags">
+                        <span class="tag">Thruster Sizing</span>
+                        <span class="tag">Mission Planning</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="card">
+                <a href="Thermal_Test_Analysis.pdf" target="_blank">
+                    <img src="https://via.placeholder.com/400x250/555555/ffffff?text=Vacuum+Chamber" alt="Thermal Test">
+                    <div class="card-meta">08 / Experimental Testing</div>
+                    <h3>Thermal Test Analysis <span>&rarr;</span></h3>
+                    <p>Vacuum chamber coating characterization</p>
+                    <div class="tags">
+                        <span class="tag">Thermodynamics</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="card">
+                <a href="BSc_Thesis_Space_RTG_Systems.pdf" target="_blank">
+                    <img src="https://via.placeholder.com/400x250/333333/ffffff?text=RTG+Diagram" alt="BSc Thesis">
+                    <div class="card-meta">09 / BSc Thesis</div>
+                    <h3>Space RTG Systems <span>&rarr;</span></h3>
+                    <p>Radioisotope thermoelectric generators analysis</p>
+                    <div class="tags">
+                        <span class="tag">Nuclear Systems</span>
+                        <span class="tag">Italian</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="copyright">Brian Bertacco</div>
+        <div class="footer-links">
+            <a href="Brian_Bertacco_CV.pdf" target="_blank">CV</a> / 
+            <a href="#">LinkedIn</a> / 
+            <a href="mailto:brian2000ber@gmail.com">Contact</a>
+        </div>
+        <div class="credit">Design concept &middot; Illustrative project imagery</div>
+    </footer>
+
+</body>
+</html>
