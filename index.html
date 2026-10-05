@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brian Bertacco | Aerospace Engineering Portfolio</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #0b1320;
+        --surface: #16263d;
+        --text: #edf2f7;
+        --muted: #bfd1e5;
+        --accent: #56ccf2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(180deg, var(--bg), #0f1f34);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+
+      h1,
+      h2 {
+        line-height: 1.2;
+      }
+
+      header p {
+        color: var(--muted);
+        max-width: 42rem;
+      }
+
+      .project-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      article {
+        background: var(--surface);
+        border: 1px solid rgba(86, 204, 242, 0.2);
+        border-radius: 12px;
+        padding: 1rem;
+      }
+
+      article h3 {
+        margin-top: 0;
+        color: var(--accent);
+      }
+
+      ul {
+        margin: 0.4rem 0 0;
+        padding-left: 1.1rem;
+      }
+
+      footer {
+        margin-top: 2.5rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Brian Bertacco</h1>
+        <p>
+          Aerospace engineering portfolio focused on experimental research, propulsion systems,
+          high-fidelity simulation, and end-to-end spacecraft mission development.
+        </p>
+      </header>
+
+      <section aria-labelledby="projects-title">
+        <h2 id="projects-title">Featured Work</h2>
+        <div class="project-grid">
+          <article>
+            <h3>Research</h3>
+            <p>Applied research programs exploring aerothermal behavior, controls, and flight dynamics.</p>
+            <ul>
+              <li>Data-driven aerodynamic model validation</li>
+              <li>Uncertainty quantification for test campaigns</li>
+              <li>Publication-ready technical reporting</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Propulsion</h3>
+            <p>Design and analysis work spanning component performance to integrated propulsion architecture.</p>
+            <ul>
+              <li>Engine cycle trade studies</li>
+              <li>Injector and feed-system performance analysis</li>
+              <li>Test planning and post-fire assessment</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Simulation</h3>
+            <p>Numerical simulation pipelines that support design decisions and mission-level optimization.</p>
+            <ul>
+              <li>6-DOF trajectory simulation</li>
+              <li>Multiphysics modeling and parameter sweeps</li>
+              <li>Automated analysis with reproducible workflows</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Spacecraft Projects</h3>
+            <p>Systems engineering and implementation for spacecraft concepts from requirements to validation.</p>
+            <ul>
+              <li>Mission architecture and subsystem sizing</li>
+              <li>Power, thermal, and communications integration</li>
+              <li>Operations concepts and verification planning</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <p>Available for collaboration on aerospace research, propulsion, and mission design initiatives.</p>
+      </footer>
+    </main>
+  </body>
+</html>
